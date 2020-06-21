@@ -4,51 +4,122 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="assets/fullpage.min.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 		.section {
 			text-align: center;
-			padding: 40px;
+
+		}
+
+		.row {
+			padding: 10px 100px 10px 100px;
 		}
 	</style>
 </head>
 
 <body>
-	<div class="container-fluid" id="fullpage">
-		<div class="section">
+	<div id="fullpage">
+		<div class="section first">
 			<div class="slide">
-				<h1><i class="fa fa-clock-o"></i> Animal Crossing New Horizons <i class="fa fa-photo"></i></h1>
+				<h1 class="animate__animated animate__bounceInDown"><i class="fa fa-clock-o"></i> Animal Crossing New
+					Horizons <i class="fa fa-photo"></i></h1>
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-md-8 offset-md-2">
 						<img src="https://www.nintendo.com/content/dam/noa/en_US/games/switch/a/animal-crossing-new-horizons-switch/animal-crossing-new-horizons-switch-hero.jpg"
 							class="img-fluid" alt="Animal Crossing New Horizon Image">
 					</div>
-					<div class="col-md-4">
+				</div>
+				<div class="row">
+					<div class="col-md-12">
 						<p>
-							Blah Blah
+							Living my life through a virtual staycation, doing my favorite things.
 						</p>
 					</div>
 				</div>
 			</div>
-			<!-- <div class="slide"> Slide 2 </div>
-			<div class="slide"> Slide 3 </div>
-			<div class="slide"> Slide 4 </div> -->
 		</div>
-		<div class="section">
-			<div class="slide"> Slide 1 </div>
-			<!-- <div class="slide"> Slide 2 </div>
-			<div class="slide"> Slide 3 </div>
-			<div class="slide"> Slide 4 </div> -->
+		<div class="section second">
+			<div class="slide">
+				<h1>Fishing It Is Not Called Catching</h1>
+				<div class="row">
+					<div class="col-md-8">
+						<img src="images/castfishingpole.jpg" class="img-fluid" alt="Animal Crossing New Horizon Image">
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<img src="images/waitforbite.jpg" class="img-fluid" alt="Animal Crossing New Horizon Image">
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<img src="images/haveabite.jpg" class="img-fluid" alt="Animal Crossing New Horizon Image">
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<img src="images/seabassoutofwater.jpg" class="img-fluid"
+							alt="Animal Crossing New Horizon Image">
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<img src="images/seabassinhand.jpg" class="img-fluid" alt="Animal Crossing New Horizon Image">
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<img src="images/identifyseabass.jpg" class="img-fluid" alt="Animal Crossing New Horizon Image">
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="section">
-			<div class="slide"> Slide 1 </div>
-			<!-- <div class="slide"> Slide 2 </div>
-			<div class="slide"> Slide 3 </div>
-			<div class="slide"> Slide 4 </div> -->
+		<div class="section third">
+			<div class="slide">
+				<h1>Seashells By The Seashore</h1>
+				<div class="row">
+					<div class="col-md-8">
+						<img src="images/seashells.jpg" class="img-fluid" alt="Animal Crossing New Horizon Image">
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<img src="images/identifygiantclam.jpg" class="img-fluid"
+							alt="Animal Crossing New Horizon Image">
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<img src="images/identifycoral.jpg" class="img-fluid" alt="Animal Crossing New Horizon Image">
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<img src="images/pickupcoral.jpg" class="img-fluid" alt="Animal Crossing New Horizon Image">
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="section">
+		<div class="section fourth">
 			<div class="slide"> Slide 1 </div>
 			<!-- <div class="slide"> Slide 2 </div>
 			<div class="slide"> Slide 3 </div>
@@ -68,14 +139,89 @@
 
 
 	<script type="text/javascript">
-		new fullpage('#fullpage', {
-			sectionsColor: ['#DBC7BE', '#CBB3BF', '#95ADB6', '#8DA1B9'],
-			//options here
-			slidesNavigation: true,
-		});
+		(function ($) {
 
-		//methods
-		//fullpage_api.setAllowScrolling(false);
+			'use strict';
+
+			// variables
+			var $isAnimatedFirst = $('.first .is-animated'),
+				$isAnimatedFirstSingle = $('.first .is-animated__single'),
+				$isAnimatedSecond = $('.second .is-animated'),
+				$isAnimatedSecondSingle = $('.second .is-animated__single'),
+				$isAnimatedThird = $('.third .is-animated'),
+				$isAnimatedThirdSingle = $('.third .is-animated__single'),
+				$isAnimatedFourth = $('.fourth .is-animated'),
+				$isAnimatedFourthSingle = $('.fourth .is-animated__single');
+
+			// initialize fullPage
+			$('#fullpage').fullpage({
+
+				sectionsColor: ['#DBC7BE', '#CBB3BF', '#95ADB6', '#8DA1B9'],
+				slidesNavigation: true,
+				onLeave: function (index, nextIndex, direction) {
+
+					/**
+					* use the following condition: 
+					*
+					*   if( index == 1 && direction == 'down' ) {
+					*
+					* if you haven't enabled the dot navigation
+					* or you aren't interested in the animations that occur 
+					* when you jump (using the dot navigation) 
+					* from the first section to another sections 
+					*/
+
+					// first animation
+					if (index == 1 && nextIndex == 2) {
+						$isAnimatedSecond.addClass('animated fadeInUpBig');
+						$isAnimatedSecond.eq(0).css('animation-delay', '.3s');
+						$isAnimatedSecond.eq(1).css('animation-delay', '.6s');
+						$isAnimatedSecond.eq(2).css('animation-delay', '.9s');
+						$isAnimatedSecondSingle.addClass('animated rollIn').css('animation-delay', '1.7s');
+					}
+
+					/**
+					  * use the following condition: 
+					  *
+					  *   else if( index == 2 && direction == 'down' ) {
+					  *
+					  * if you haven't enabled the dot navigation
+					  * or you aren't interested in the animations that occur 
+					  * when you jump (using the dot navigation) from the first section to the third one 
+					  */
+
+					// second animation
+					else if ((index == 1 || index == 2) && nextIndex == 3) {
+						$isAnimatedThird.eq(0).addClass('animated fadeInRightBig').css('animation-delay', '.3s');
+						$isAnimatedThird.eq(1).addClass('animated fadeInLeftBig').css('animation-delay', '.6s');
+						$isAnimatedThirdSingle.addClass('animated bounceInDown').css('animation-delay', '1.2s');
+					}
+
+
+					/**
+					 * use the following condition:
+					 *
+					 *   else if( index == 3 && direction == 'down' ) {
+					 *
+					 * if you haven't enabled the dot navigation
+					 * or you aren't interested in the animations that occur 
+					 * when you jump (using the dot navigation) 
+					 * from the first or second section to the fourth one 
+					 */
+
+					// third animation
+					else if ((index == 1 || index == 2 || index == 3) && nextIndex == 4) {
+						$isAnimatedFourth.addClass('animated zoomIn').css('animation-delay', '.6s');
+						$isAnimatedFourthSingle.addClass('animated lightSpeedIn').css('animation-delay', '1.2s');
+						$isAnimatedFourthSingle.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+							$(this).removeClass('lightSpeedIn').addClass('zoomOutDown');
+						});
+					}
+				}
+
+			});
+
+		})(jQuery);
 	</script>
 
 </body>
