@@ -22,9 +22,10 @@
 
 <body>
 	<div id="fullpage">
-		<div class="section first">
+		<div class="section">
 			<div class="slide">
-				<h1 class="animate__animated animate__fadeInDown"><i class="fa fa-clock-o"></i> Animal Crossing New
+				<h1 class="d-none animate__animated animate__fadeInDown"><i class="fa fa-clock-o"></i> Animal
+					Crossing New
 					Horizons <i class="fa fa-photo"></i></h1>
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
@@ -41,10 +42,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="section second">
+		<div class="section">
 			<div class="slide">
-				<h1 class="animate__animated animate__rotateInDownLeft">Fishing Is Not Called Catching </h1><i
-					class='fas fa-fish animate__animated animate__rotateInDownLeft' style="color: green;"></i>
+				<h1 class="d-none animate__animated animate__rotateInDownLeft">Fishing Is Not Called Catching </h1><i
+					class='fas fa-fish d-none animate__animated animate__rotateInDownLeft' style="color: green;"></i>
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
 						<img src="images/castfishingpole.jpg" class="img-fluid" alt="Animal Crossing New Horizon Image">
@@ -96,9 +97,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="section third">
+		<div class="section">
 			<div class="slide">
-				<h1>Seashells By The Seashore <i class="fa fa-search animate__animated animate__zoomIn"></i></h1>
+				<h1>Seashells By The Seashore <i class="fa fa-search d-none animate__animated animate__zoomIn"></i></h1>
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
 						<img src="images/seashells.jpg" class="img-fluid" alt="Animal Crossing New Horizon Image">
@@ -136,9 +137,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="section fourth">
+		<div class="section">
 			<div class="slide">
-				<h1>Seas The Day <i class="fa fa-sun-o animate__animated animate__flip"></i></h1>
+				<h1>Seas The Day <i class="fa fa-sun-o d-none animate__animated animate__flip"></i></h1>
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
 						<img src="images/lounge2.jpg" class="img-fluid" alt="Animal Crossing New Horizon Image">
@@ -177,89 +178,31 @@
 
 
 	<script type="text/javascript">
-		(function ($) {
+		jQuery.animateOnSectionLoad = function () {
+			var activeSection = $('.section.active');
+			$(".d-none", activeSection).each(function () {
+				var animationTarget = $(this);
+				animationTarget.removeClass("d-none");
+			});
+		};
 
-			'use strict';
-
-			// variables
-			var $isAnimatedFirst = $('.first .is-animated'),
-				$isAnimatedFirstSingle = $('.first .is-animated__single'),
-				$isAnimatedSecond = $('.second .is-animated'),
-				$isAnimatedSecondSingle = $('.second .is-animated__single'),
-				$isAnimatedThird = $('.third .is-animated'),
-				$isAnimatedThirdSingle = $('.third .is-animated__single'),
-				$isAnimatedFourth = $('.fourth .is-animated'),
-				$isAnimatedFourthSingle = $('.fourth .is-animated__single');
-
-			// initialize fullPage
+		$(document).ready(function () {
 			$('#fullpage').fullpage({
-
 				sectionsColor: ['#DBC7BE', '#CBB3BF', '#95ADB6', '#8DA1B9'],
 				slidesNavigation: true,
-				onLeave: function (index, nextIndex, direction) {
 
-					/**
-					* use the following condition: 
-					*
-					*   if( index == 1 && direction == 'down' ) {
-					*
-					* if you haven't enabled the dot navigation
-					* or you aren't interested in the animations that occur 
-					* when you jump (using the dot navigation) 
-					* from the first section to another sections 
-					*/
-
-					// first animation
-					if (index == 1 && nextIndex == 2) {
-						$isAnimatedSecond.addClass('animated fadeInUpBig');
-						$isAnimatedSecond.eq(0).css('animation-delay', '.3s');
-						$isAnimatedSecond.eq(1).css('animation-delay', '.6s');
-						$isAnimatedSecond.eq(2).css('animation-delay', '.9s');
-						$isAnimatedSecondSingle.addClass('animated rollIn').css('animation-delay', '1.7s');
-					}
-
-					/**
-					  * use the following condition: 
-					  *
-					  *   else if( index == 2 && direction == 'down' ) {
-					  *
-					  * if you haven't enabled the dot navigation
-					  * or you aren't interested in the animations that occur 
-					  * when you jump (using the dot navigation) from the first section to the third one 
-					  */
-
-					// second animation
-					else if ((index == 1 || index == 2) && nextIndex == 3) {
-						$isAnimatedThird.eq(0).addClass('animated fadeInRightBig').css('animation-delay', '.3s');
-						$isAnimatedThird.eq(1).addClass('animated fadeInLeftBig').css('animation-delay', '.6s');
-						$isAnimatedThirdSingle.addClass('animated bounceInDown').css('animation-delay', '1.2s');
-					}
-
-
-					/**
-					 * use the following condition:
-					 *
-					 *   else if( index == 3 && direction == 'down' ) {
-					 *
-					 * if you haven't enabled the dot navigation
-					 * or you aren't interested in the animations that occur 
-					 * when you jump (using the dot navigation) 
-					 * from the first or second section to the fourth one 
-					 */
-
-					// third animation
-					else if ((index == 1 || index == 2 || index == 3) && nextIndex == 4) {
-						$isAnimatedFourth.addClass('animated zoomIn').css('animation-delay', '.6s');
-						$isAnimatedFourthSingle.addClass('animated lightSpeedIn').css('animation-delay', '1.2s');
-						$isAnimatedFourthSingle.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-							$(this).removeClass('lightSpeedIn').addClass('zoomOutDown');
-						});
-					}
-				}
-
+				//events
+				onLeave: function (index, nextIndex, direction) { },
+				afterLoad: function (anchorLink, index) {
+					// function inserted in callback
+					$.animateOnSectionLoad();
+				},
+				afterRender: function () { },
+				afterResize: function () { },
+				afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) { },
+				onSlideLeave: function (anchorLink, index, slideIndex, direction, nextSlideIndex) { }
 			});
-
-		})(jQuery);
+		});
 	</script>
 
 </body>
