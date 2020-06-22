@@ -17,6 +17,107 @@
 		.row {
 			padding: 10px 100px 10px 100px;
 		}
+
+		@keyframes swim {
+			0% {
+				margin-left: -235px
+			}
+
+			70% {
+				margin-left: 100%;
+			}
+
+			100% {
+				margin-left: 100%;
+			}
+		}
+
+		.fa-fish {
+			width: 235px;
+			height: 104px;
+			margin-left: -235px;
+			position: absolute;
+			animation: swim 20s;
+			-webkit-animation: swim 20s;
+			animation-iteration-count: infinite;
+			-webkit-animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			-webkit-animation-timing-function: linear;
+		}
+
+		.fish {
+			fill: #528484;
+
+			-moz-animation: bounce 3s infinite;
+			-webkit-animation: bounce 3s infinite;
+			animation: bounce 3s infinite;
+		}
+
+		@-moz-keyframes bounce {
+
+			0%,
+			50%,
+			100% {
+				-moz-transform: translateY(0);
+				transform: translateY(0);
+			}
+
+			25% {
+				-moz-transform: translateY(-5px);
+				transform: translateY(-5px);
+			}
+
+			75% {
+				-moz-transform: translateY(-3px);
+				transform: translateY(-3px);
+			}
+		}
+
+		@-webkit-keyframes bounce {
+
+			0%,
+			50%,
+			100% {
+				-webkit-transform: translateY(0);
+				transform: translateY(0);
+			}
+
+			25% {
+				-webkit-transform: translateY(-5px);
+				transform: translateY(-5px);
+			}
+
+			75% {
+				-webkit-transform: translateY(-3px);
+				transform: translateY(-3px);
+			}
+		}
+
+		@keyframes bounce {
+
+			0%,
+			50%,
+			100% {
+				-moz-transform: translateY(0);
+				-ms-transform: translateY(0);
+				-webkit-transform: translateY(0);
+				transform: translateY(0);
+			}
+
+			25% {
+				-moz-transform: translateY(-5px);
+				-ms-transform: translateY(-5px);
+				-webkit-transform: translateY(-5px);
+				transform: translateY(-5px);
+			}
+
+			75% {
+				-moz-transform: translateY(-3px);
+				-ms-transform: translateY(-3px);
+				-webkit-transform: translateY(-3px);
+				transform: translateY(-3px);
+			}
+		}
 	</style>
 </head>
 
@@ -44,8 +145,13 @@
 		</div>
 		<div class="section">
 			<div class="slide">
-				<h1 class="d-none animate__animated animate__rotateInDownLeft">Fishing Is Not Called Catching </h1><i
-					class='fas fa-fish d-none animate__animated animate__rotateInDownLeft' style="color: green;"></i>
+				<h1 class="d-none animate__animated animate__rotateInDownLeft">Fishing Is Not Called Catching </h1>
+				<div class="row">
+					<div class="col-md-12" style="text-align: left;">
+						<i class='fas fa-2x fa-fish d-none animate__animated animate__rotateInDownLeft' id="fish"
+							style="color: green;"></i>
+					</div>
+				</div>
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
 						<img src="images/castfishingpole.jpg" class="img-fluid" alt="Animal Crossing New Horizon Image">
