@@ -18,44 +18,25 @@
 			padding: 10px 100px 10px 100px;
 		}
 
-		/* @-webkit-keyframes swim {
-			0% {
-				margin-left: 0%;
-			}
-
-			90% {
-				margin-left: 100%;
-			}
-
-			100% {
-				margin-left: 100%;
-			}
-		} */
 
 		@keyframes swim {
 			0% {
-				margin-left: 0%;
+				left: 0;
+				transform: scaleX(1);
 			}
 
-			25% {
-				margin-left: 20%;
-				transform: rotateY(180deg);
+			49.999% {
+				transform: scaleX(1);
 			}
 
 			50% {
-				margin-left: -25%;
-				transform: rotateY(0deg);
-				transform-origin: center center;
-			}
-
-			75% {
-				margin-left: 50%;
-				transform: rotateY(0deg);
+				left: calc(100% - 250px);
+				transform: scaleX(-1);
 			}
 
 			100% {
-				margin-left: 85%;
-				transform: rotateY(180deg);
+				left: 0%;
+				transform: scaleX(-1);
 			}
 		}
 
@@ -116,7 +97,7 @@
 			<div class="slide">
 				<h1 class="d-none animate__animated animate__rotateInDownLeft">Fishing Is Not Called Catching </h1>
 				<div class="row">
-					<div class="col-md-12 fish" id="fish">
+					<div class="col-md-12 fish" id="fish" style="text-align: left;">
 						<i class='fas fa-lg fa-fish d-none animate__animated animate__rotateInDownLeft'
 							style="color: green;"></i>
 					</div>
